@@ -58,8 +58,8 @@ require_once 'login.php';
         <input class="form-control mr-sm-2" type="email" name="user" placeholder="Usuario" required/><br>
         <input class="form-control mr-sm-2" type="password" name="pass" placeholder="Password" autocomplete="off" required/>
                     
-               <button type="submit" value="INGRESAR" class="btn btn-primary">INGRESAR</button>
-               <a class='btn btn-primary' href='signup.php' role='button'>REGISTRARSE</a>
+               <button type="submit" value="INGRESAR" class="btn btn-primary">INGRESAR</button><br>
+                                <a href='signup.php'>REGISTRARSE</a>
         </form>
         
         </div>

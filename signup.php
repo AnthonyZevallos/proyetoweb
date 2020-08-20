@@ -51,10 +51,9 @@
         <form class="form-inline my-2 my-lg-0" action="signup.php" method="post"><pre>
         <input class="form-control mr-sm-2" type="email" name="user" placeholder="Ingrese Email" autocomplete="off" required/><br>
         <input class="form-control mr-sm-2" type="password" name="pass" placeholder="Ingrese Password" autocomplete="off" required/>
-                 <input type="hidden" name="reg" value="yes">
-                 
-            <button type="submit" value="TO REGISTER" class="btn btn-primary">TO REGISTER</button>
-                 
+                 <input type="hidden" name="reg" value="yes">     
+            <button type="submit" value="TO REGISTER" class="btn btn-primary">TO REGISTER</button><br>
+                                 <a href='index.php'>ATRAS</a>     
         </form>
         
         </div>
