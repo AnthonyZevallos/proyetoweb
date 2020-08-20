@@ -31,3 +31,12 @@ input[type=password]{
     margin-left:40px;
     
 }
+
+.b{
+   text-align: center;    
+  border:3px solid rgb(223,78,3); 
+    opacity: 80%; 
+    width: 30%;
+    margin: 10% auto;
+    
+}

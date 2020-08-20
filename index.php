@@ -40,8 +40,8 @@ require_once 'login.php';
         else
             
           /*  $alerta='usuario o contraseña incorresta';*/
-            echo "<br><h1>User or password incorrect</h1> <br>  <a class='btn btn-primary' href='signup.php' role='button'>REGISTRARSE</a> "; 
-         echo "<br> <a class='btn btn-primary' href='index.php' role='button'>SALIR</a> ";
+            echo "<div class='b'><br><h4>User or password incorrect</h4> <br>  <a class='btn btn-primary' href='signup.php' role='button' >REGISTRARSE</a><br> "; 
+         echo "<br> <a class='btn btn-primary' href='index.php' role='button'>SALIR</a> </div>";
         
     }
         
