@@ -10,7 +10,7 @@
      <link rel="stylesheet" href="enlaces/bootstrap-4.5.2-dist/css/bootstrap.min.css">
     <script src="enlaces/jquery-3.5.1.min.js"></script>
     <script src="enlaces/bootstrap-4.5.2-dist/js/bootstrap.min.js" ></script>
-     <link rel="stylesheet" href="css/styleindex.css">
+     
 
      <title>Document</title>
 
@@ -42,7 +42,7 @@
     }
     else
     {   /*----------formulario para registrar al  nuevo user------------*/
-        echo <<<_END
+        echo <<< _END
         
         
         <div id="contenedor">
@@ -58,6 +58,7 @@
         
         </div>
         _END;
+    
     }
 
 

@@ -1,3 +1,5 @@
+<?php ob_start() ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +8,7 @@
      <link rel="stylesheet" href="enlaces/bootstrap-4.5.2-dist/css/bootstrap.min.css">
     <script src="enlaces/jquery-3.5.1.min.js"></script>
     <script src="enlaces/bootstrap-4.5.2-dist/js/bootstrap.min.js" ></script>
-    <link rel="stylesheet" href="css/styleindex.css">
+   
      
     <title>Document</title>
 </head>
@@ -20,7 +22,7 @@ require_once 'login.php';
     $conexion = new mysqli($hn, $un, $pw, $db);
     if ($conexion->connect_error) die ("Fatal error");
 
-    $alerta ='';
+   
    /* ------------pregunto si esta con contenido para consultar si el usuario exite para acceder el paso*/
     if(isset($_POST['user']) && isset($_POST['pass']))
     {
@@ -34,7 +36,7 @@ require_once 'login.php';
         
         if ($result->num_rows >= 1)
             /*esto es para direccionar cuando cumple esto*/
-            header('location: principal.php');
+            @header('location:principal.php');
            /* echo "<h1>Bienvenido</h1>"."<br><h3>nos alegra su parcipacion disfrutelo para porder entrar solo haga clik </h3> <a class='btn btn-primary' href='principal.php' role='button'>AQUI</a> ";*/
             
         else
@@ -48,10 +50,10 @@ require_once 'login.php';
     else
     {
         /*--------formularios de para acceder los datos y haga las respectivas consultasss-----*/
-        echo <<<_END
+        echo <<< _END
            
         
-        <div id='contenedor'>
+        <div class="alert alert-secondary" role="alert">
             <h1>Ingresa</h1>
             
         <form class="form-inline my-2 my-lg-0" action="index.php" method="post"><pre>
@@ -64,9 +66,12 @@ require_once 'login.php';
         
         </div>
         
-        _END;
+   
+       _END;
+        
     }
     
+     
     function mysql_fix_string($coneccion, $string)
     {
         if (get_magic_quotes_gpc())
@@ -74,8 +79,10 @@ require_once 'login.php';
         return $coneccion->real_escape_string($string);
     }
    /* es para saber si esta o no<div class='alert'><?php echo isset($alerta) ? $alerta :''; ?></div> */
+
 ?>
 
  
 </body>
 </html>
+<?php ob_end_flush();?>
