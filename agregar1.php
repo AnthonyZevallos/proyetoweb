@@ -15,7 +15,7 @@
       if($resultado->num_rows > 0 ){
           
          /*ya esiste este autor baya a seleccionar*/
-          echo'ya esiste';                 
+                          
         if (!$resultado) die ("Falló el acceso a la base de datos thony");  
         }  
       
@@ -30,6 +30,45 @@
        }
        
    }
+
+/*almacenando al dueño del libro*/
+
+if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telefonoP']) && isset($_POST['paisP']) && isset($_POST['emailP']) && isset($_POST['dniP'])){
+       
+      $nombreP = $_POST['nombreP'];
+      $apellidoP = $_POST['apellidoP'];
+      $telefonoP = $_POST['telefonoP'];
+      $paisP = $_POST['paisP'];
+      $emailP = $_POST['emailP'];
+      $dniP = $_POST['dniP'];
+    
+       
+     $exitepro ="select * from proveedor where nombre_provedor ='$nombreP' or dni='$dniP'  "; 
+       
+       $resultado = $conexion->query($exitepro);
+       
+      if($resultado->num_rows > 0 ){
+          
+         /*ya esiste este autor baya a seleccionar*/
+                          
+        if (!$resultado) die ("Falló el acceso a la base de datos thony");  
+        }  
+      
+       else{
+               
+        $agregarP="insert  into proveedor (nombre_provedor,apellido_provedor,telefono,pais_ciudad,email,dni) values('$nombreP','$apellidoP','$telefonoP','$paisP','$emailP','$dniP')";
+          
+            $resultadoP = $conexion->query( $agregarP);
+           if (!$resultadoP) die ("Falló el acceso a la base de datos thony");
+       
+       
+       }
+       
+   }
+    
+
+
+
     
 
 
@@ -50,7 +89,7 @@
 
 
 
-/*almacenando al dueño del libro*/
+
 
 ?>
 
@@ -242,7 +281,7 @@
  
    <main class="conteiner2" >
      
-    <div class="modal" id="modal2" tabindex="-1" role="dialog" aria-labelledby="tituloventa2" aria-hidden="true" > 
+    <div class="modal " id="modal2" tabindex="-1" role="dialog" aria-labelledby="tituloventa2" aria-hidden="true" > 
   <div class="modal-dialog" role="document">      
  <div class="modal-content">
       <div class="modal-header">
