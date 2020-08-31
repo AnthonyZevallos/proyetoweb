@@ -1,7 +1,7 @@
 <?php 
  include "login.php"; 
 
-  /*almacenando autor del lobro*/
+  /*almacenando autor del libro*/
    if(isset($_POST['nombreA']) && isset($_POST['apellidoA']) && isset($_POST['nacionalidadA'])){
        
       $nombreA = $_POST['nombreA'];
@@ -127,6 +127,10 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
        </li>
     </ul>
     
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" id="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
       
     
   </div>
@@ -135,11 +139,11 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
  <div class="container p-4">
       <div class="row">
           <div class="col-md-5">
-            <h2 class="text-center">agrega los datos al formulario</h2>
+           
              <div class="card">
                
                  <div class="card-body">
-                    
+                     <h2 class="text-center">agrega los datos al formulario</h2>
                     
                      <form id="almacen-form" >
                        
@@ -163,14 +167,15 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                          </select>
                          <label for="publicacion">fecha de publicación</label>
                          <div class="form-group">
-                           <input type="date" class="form-control" id="cantidadextraido"> 
+                           <input type="date" class="form-control" id="fechaPublicacion"> 
                          </div>
+                         
                    <a class='form-group' data-toggle='modal' data-target='#modal1' >elige el autor Clik aqui agregar</a>    
                          <select name="fkautor" id="fkautor" class="form-control">
                       <?php 
                         while($row=mysqli_fetch_array($sql_query ,MYSQLI_NUM)){
                             
-                        echo "<option value=".srow[0].">".$row[1]."".$row[2]    ."</option>";    
+                        echo "<option value=".$row[0].">".$row[1]."".$row[2] ."</option>";    
                         }
                             
                             
@@ -184,7 +189,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                       <?php 
                         while($row=mysqli_fetch_array($sql_almacen ,MYSQLI_NUM)){
                             
-                        echo "<option value=".srow[0].">".$row[1]." ".$row[2]  ."</option>";    
+                        echo "<option value=".$row[0].">".$row[1]." ".$row[2]."</option>";    
                         }
                             
                             
@@ -234,7 +239,37 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
              </div>
               
           </div>
-          <div class="col-md-7">
+          <div class="col-md-7 ">
+           <div class="card my-4" id="para_ocultar">
+               <div class="card-body">
+                   <ul id="contenedorA"></ul>
+                   
+               </div>
+               
+               
+           </div>
+          
+          
+           <table class="table table-bordered table.sm">
+               <thead>
+                  <tr>
+                   <td>ibsn</td>
+                   <td>titulo</td>
+                   <td>autor</td>
+                   <td>imagen</td>
+                   
+               </tr>   
+                   
+               </thead>
+               
+               <tbody id="cuerpomostrar">
+                   
+                   
+               </tbody>
+               
+               
+               
+           </table>
            
               
           </div>
@@ -316,12 +351,13 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
       
   </main>
    
-  
-    
-      
+   
+
+
         
  
  <script src="enlaces/jquery-3.5.1.min.js"></script>
-  <script src="enlaces/bootstrap-4.5.2-dist/js/bootstrap.min.js" ></script>                        
+  <script src="enlaces/bootstrap-4.5.2-dist/js/bootstrap.min.js" ></script>  
+  <script src="script.js"></script>                      
 </body>
 </html>
