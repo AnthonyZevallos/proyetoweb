@@ -1,9 +1,4 @@
-<?php 
 
-
-
-   
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,22 +37,50 @@
     </ul>
     
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" id="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     
   </div>
 </nav> 
-     
+     <div class="container p-4">
+        <div class="row">
+           <div class="col-md-12">
+               <div>
+                  <table id="tablacontenedor" class="table table-bordered table.sm">
+                     <thead>
+                  <tr>
+                   <td class="table-success">ibsn</td>
+                   <td class="table-success">titulo</td>
+                   <td class="table-success">categoria</td>
+                   <td class="table-success">nombre_autor</td>
+                   <td class="table-success">apellido_autor</td>
+                   <td class="table-success">nombre_proveedor</td>
+                   <td class="table-success">apellido_proveedor</td>
+                   <td class="table-success">idioma</td>
+                   <td class="table-success">precio</td>
+                 </tr>   
+                   
+                    </thead> 
+                     
+                    <tbody id="cuerpomostrar">
+                        
+                        
+                    </tbody> 
+                     
+                      
+                  </table> 
+                   
+               </div>
+           </div> 
+        </div> 
+         
+        </div> 
   
   
-  
-  
-   
-   
-   
    
   <script src="enlaces/jquery-3.5.1.min.js"></script>
-  <script src="enlaces/bootstrap-4.5.2-dist/js/bootstrap.min.js" ></script>  
+  <script src="enlaces/bootstrap-4.5.2-dist/js/bootstrap.min.js" ></script>
+   <script src="principalA.js"></script>  
 </body>
 </html>

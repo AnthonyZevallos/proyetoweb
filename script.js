@@ -5,7 +5,9 @@ $(function() {
     
     $('#para_ocultar').hide();
     
-    $('#search').keyup(function(e){//query.js  cuando aplasta boton en id search
+    actualizarM();//yamando la funcion para que muestre los datos de de los libros
+    
+    $('#search').keyup(function(e){//query.js  cuando unput en id search
        
      if ($('#search').val()){
          
@@ -46,42 +48,73 @@ $(function() {
         
         
         
-    });
+    })   ;
     //agregando libro
+    
 
-    $('#almacen-form').submit(function(e){
+   $('#almacen-form').submit(function(e){
         
         const enviarDato ={
             
-         ibsn: $('#ibsn').val(),
-         titulo: $('#titulo').val(),   
-         categoria: $('#categoria').val(),
-         fecha: $('#fechaPublicacion').val(), 
-         autor: $('#fkautor').val(),
-         di_proveedor: $('#fkproveedor').val(),   
-         editorial: $('#editorial').val(),
-         idioma: $('#idioma').val(), 
-         precio: $('#precio').val(),
-         imagen: $('#txtimg').val(),   
-         descripcion: $('#descripcion').val(),
-        
+         ibsn:$('#ibsn').val(),
+         titulo:$('#titulo').val(),   
+         categoria:$('#categoria').val(),
+         fechaPublicacion:$('#fechaPublicacion').val(), 
+         fkautor:$('#fkautor').val(),
+         fkproveedor:$('#fkproveedor').val(),   
+         editorial:$('#editorial').val(),
+         idioma:$('#idioma').val(), 
+         precio:$('#precio').val(),
+         descripcion:$('#descripcion').val()
+         
                 
                
             
         }
-    $.post('agregarL.php',enviarDato, function(response){
+		//console.log(enviarDato); 
+       
+    $.post('insert.php',enviarDato,function(response){
+           $('#almacen-form').trigger('reset');
+           actualizarM();//llamar la funcion para que se muestre despues se agrege un nuevo libro
+       });
+           
+           
+       e.preventDefault(); //para que no se regresce la pagina    
+     });
+		
+	 function actualizarM(){
+        
+          //ajax ya te envia por defecto los datos por que no ponemos ningun evento    
+    $.ajax({
+        
+        url:'listar1.php',
+        type:'GET',
+        success: function(r){
+          let muestras = JSON.parse(r); //TRANSFORMANDO EL STRING JSON A UN OBJETO PARA PODER  MOSTRARLO
+           let modelo='';
+            muestras.forEach(muestra =>{
+                modelo +=`
+                      <tr>
+                        <td>${muestra.ibsn}</td>
+                        <td>${muestra.titulo}</td>
+                        <td>${muestra.categoria}</td>
+                        <td>${muestra.idioma}</td>      
+                      </tr>
+                         `
+                });
+        $('#cuerpomostrar').html(modelo);
+            
+        }
+        
+    });  
+         
+ } 
+     
         
         
+    
         
-        console.log(response);
-    } );    
-        
-        
-        
-        
-    e.preventDefault();    
-        
-    });
+   }); 
 
 
-});
+

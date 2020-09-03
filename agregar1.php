@@ -145,14 +145,14 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                  <div class="card-body">
                      <h2 class="text-center">agrega los datos al formulario</h2>
                     
-                     <form id="almacen-form" >
+                     <form id="almacen-form" method="post"  >
                        
                          <div class="form-group">
                           
-                           <input type="text" class="form-control" id="ibsn" placeholder="agregar el ibsn">  
+                           <input type="text" class="form-control" id="ibsn" name="ibsn" placeholder="agregar el ibsn">  
                          </div>
                          <div class="form-group">
-                           <input type="text" class="form-control" id="titulo" placeholder="titulo">     
+                           <input type="text" class="form-control" id="titulo"  name="titulo" placeholder="titulo">     
        
                          </div>
                     <label for="categoria">categoria</label>
@@ -167,7 +167,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                          </select>
                          <label for="publicacion">fecha de publicación</label>
                          <div class="form-group">
-                           <input type="date" class="form-control" id="fechaPublicacion"> 
+                           <input type="date" class="form-control" id="fechaPublicacion" name="fechaPublicacion"> 
                          </div>
                          
                    <a class='form-group' data-toggle='modal' data-target='#modal1' >elige el autor Clik aqui agregar</a>    
@@ -201,7 +201,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                          
                          <br> 
                         <div class="form-group">
-                           <input type="text" class="form-control" id="editorial" placeholder="editorial">  
+                           <input type="text" class="form-control" id="editorial" name="editorial" placeholder="editorial">  
                          </div>
                   <label for="idioma">Que idioma esta escrita?</label>
                     <select name="idioma" id="idioma" class="form-control">
@@ -217,20 +217,19 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                          
                       <br>
                      <div class="form-group">
-                          
-                           <input type="text" class="form-control" id="precio" placeholder="precio">  
+                           
+                           <input type="text" class="form-control" id="precio" name="precio" placeholder="precio">  
                      </div>
                      
-             <div class="form-group"> 
-                     <label >ingrese imagen</label>    
-                     <input type="file" name="txtimg" id="txtimg">     
-             </div>   
-                     <div class="form-group">
+                     
+             <div class="form-group">
                           <textarea name="descripcion" id="descripcion" class="form-control" cols="30" rows="10"></textarea> 
+                     
                      </div> 
-                                     
-                         
-                         <button type="submit" class="btn btn-warning btn-block text-center">
+                     
+                     
+                                 
+                         <button type="submit" class="btn btn-warning btn-block text-center submitBtn" name="btn" id="boton">
                              guardar... 
                          </button>
                      </form>
@@ -255,10 +254,9 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                   <tr>
                    <td>ibsn</td>
                    <td>titulo</td>
-                   <td>autor</td>
-                   <td>imagen</td>
-                   
-               </tr>   
+                   <td>categoria</td>
+                   <td>idioma</td>
+                </tr>   
                    
                </thead>
                
