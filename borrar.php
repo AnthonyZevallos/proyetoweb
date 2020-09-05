@@ -2,10 +2,15 @@
 
 include('login.php');
 
-$idI=$_POST['idI'];
-$eliminardato=$_POST['eliminardato'];
-if($idI==$eliminardato){
-    $query ="DELETE FROM libros WHERE ibsn ="."{$idI}";
+
+if(isset($_POST['idI']) && isset($_POST['eliminardato'])){
+ 
+    $idI=$_POST['idI']; //1
+    $eliminardato=$_POST['eliminardato'];  
+    
+    
+    
+    $query ="DELETE FROM libros WHERE idLIBRO ="."$idI";
      $result=$conexion->query($query);
       if(!$result){die("fallo en la eliminacion");
                 
@@ -13,9 +18,9 @@ if($idI==$eliminardato){
                 echo "eliminacion con exito";
 }else{
     
-  echo "el ibsn no es el correcto ";  
+  echo "NO EXISTE POST ";  
 }
-
+ 
 
 
 

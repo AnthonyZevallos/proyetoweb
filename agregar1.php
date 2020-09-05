@@ -371,7 +371,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                         
                <button type="submit" id="elim" value="INGRESAR" class="btn btn-danger form-control">ELIMINAR</button>
            
-           
+            
            </form> 
            
          

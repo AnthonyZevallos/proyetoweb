@@ -10,7 +10,7 @@ if(!empty($_POST['idP'])){
     $muestraA= array();
     while($row=mysqli_fetch_array($result)){
         $muestraA[]=array(
-        
+           
           'nombre_provedor'=> $row['nombre_provedor'],
           'apellido_provedor'=> $row['apellido_provedor'],
           'telefono'=> $row['telefono'],

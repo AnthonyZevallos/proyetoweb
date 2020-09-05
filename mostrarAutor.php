@@ -23,4 +23,4 @@ if(!empty($_POST['idA'])){
      echo $json;
 }
 
-?>
+?>  

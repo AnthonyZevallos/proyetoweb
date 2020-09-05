@@ -46,7 +46,7 @@ $(function() {
      }    
        
         
-        
+         
         
     })   ;
     //agregando libro
@@ -82,6 +82,8 @@ $(function() {
        e.preventDefault(); //para que no se regresce la pagina    
      });
 		
+    
+    
     //mostrando los datos de cada fila de la tabla  libros
     
 	 function actualizarM(){
@@ -96,7 +98,7 @@ $(function() {
            let modelo='';
             muestras.forEach(muestra =>{
                 modelo +=`
-                      <tr darIBSN="${muestra.ibsn}">
+                      <tr darId="${muestra.idLIBRO}">
                         <td>${muestra.ibsn}</td>
                         <td>${muestra.titulo}</td>
                         <td>${muestra.categoria}</td>
@@ -123,7 +125,7 @@ $(function() {
 //obteniendo el balor del class del boton clickeado, el ibsn del libro para poder bandarlo al backen y el #ibsnE es el id del imput del modadal    
     $(document).on('click','.botonparaE',function(){
         let elementoI = $(this)[0].parentElement.parentElement;
-        let idI =$(elementoI).attr('darIBSN');
+        let idI =$(elementoI).attr('darId');
         console.log(idI);
         
       $(document).on('click','#elim',function(e){
@@ -166,8 +168,8 @@ $(function() {
     }); */   
         
     
-        
-   }); 
+          
+   });  
 
 
 

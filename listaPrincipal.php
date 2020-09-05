@@ -1,7 +1,7 @@
 <?php
 
 include('login.php');
- $query="SELECT ibsn,titulo,categoria,autor,nombre,apellido,di_proveedor,nombre_provedor,apellido_provedor,idioma,precio,descripcion FROM libros as a 
+ $query="SELECT idLIBRO,ibsn,titulo,categoria,autor,nombre,apellido,di_proveedor,nombre_provedor,apellido_provedor,idioma,precio,descripcion FROM libros as a 
 INNER JOIN autor as b ON  a.autor = b.id_autor 
 INNER JOIN proveedor as c ON  c.id_provedor =a.di_proveedor";
   
@@ -11,6 +11,7 @@ INNER JOIN proveedor as c ON  c.id_provedor =a.di_proveedor";
   $mostrando=array();
  while($row =mysqli_fetch_array($result)){
      $mostrando[] =array(
+      'idLIBRO' => $row['idLIBRO'],   
       'ibsn' => $row['ibsn'],
       'titulo' => $row['titulo'],
       'categoria' => $row['categoria'], 
@@ -24,7 +25,7 @@ INNER JOIN proveedor as c ON  c.id_provedor =a.di_proveedor";
       'precio' => $row['precio'], 
       'descripcion' => $row['descripcion']     
      );   
-     
+        
  }
 $jsonmandaString = json_encode($mostrando);
  echo $jsonmandaString;

@@ -14,14 +14,14 @@ if(isset($_POST['ibsn'])){
    $descripcion =$_POST['descripcion'];  
     
     
-   $query ="INSERT INTO libros (ibsn,titulo,categoria,fecha,autor,di_proveedor,editorial,idioma,precio,descripcion) VALUES "."('$ibsn','$titulo','$categoria','$fechaPublicacion','$fkautor','$fkproveedor','$editorial','$idioma','$precio','$descripcion')";
+   $query ="INSERT INTO libros (idLIBRO,ibsn,titulo,categoria,fecha,autor,di_proveedor,editorial,idioma,precio,descripcion) VALUES "."(null,'$ibsn','$titulo','$categoria','$fechaPublicacion','$fkautor','$fkproveedor','$editorial','$idioma','$precio','$descripcion')";
     
    
  $result = $conexion->query($query);
  if (!$result) {die('fallo en la insercion');
                }
 
-   echo'esta correcto la insercion...';
+   echo'esta correcto la insercion...';  
 }
 
  

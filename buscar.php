@@ -15,7 +15,7 @@ if(isset($search)){
     
     $sql_query =mysqli_query($conexion,$busqueda);
     
-    
+     
     $json =array();
     while($row=mysqli_fetch_array($sql_query  )){
          $json[] =array( 
@@ -28,7 +28,7 @@ if(isset($search)){
             'editorial' => $row['editorial'],
             'idioma' => $row['idioma'], 
             'precio' => $row ['precio'],
-         //   'imagen' => $row['imagen'],
+       
             'descripcion' => $row['descripcion'] 
       );
         

@@ -59,7 +59,7 @@ $(function() {
              
     
     
-    
+       
     
     
     
@@ -149,6 +149,6 @@ $(document).on('click','.mostrarProveedor',function(){
 }); 
     
     
+     
     
-    
-});
+}); 
