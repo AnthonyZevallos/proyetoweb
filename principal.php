@@ -53,10 +53,12 @@
                    <td class="table-success">ibsn</td>
                    <td class="table-success">titulo</td>
                    <td class="table-success">categoria</td>
-                   <td class="table-success">nombre_autor</td>
-                   <td class="table-success">apellido_autor</td>
-                   <td class="table-success">nombre_proveedor</td>
-                   <td class="table-success">apellido_proveedor</td>
+                   <td class="table-success">id autor</td>
+                   <td class="table-success">nombre autor</td>
+                   <td class="table-success">apellido autor</td>
+                   <td class="table-success">id proveedor</td>
+                   <td class="table-success">nombre proveedor</td>
+                   <td class="table-success">apellido proveedor</td>
                    <td class="table-success">idioma</td>
                    <td class="table-success">precio</td>
                  </tr>   
@@ -76,6 +78,70 @@
         </div> 
          
         </div> 
+        
+  <main class="conteiner4" >
+     
+    <div class="modal " id="modal4" tabindex="-1" role="dialog" aria-labelledby="tituloventa4" aria-hidden="true" > 
+  <div class="modal-dialog" role="document">      
+ <div class="modal-content">
+      <div class="modal-header">
+            <h2 id="tituloventa4">informacion del autor libro</h2>
+          <button class="close" data-dismiss="modal" aria-label="cerrar">
+            <span aria-hidden="true">&times;</span>  
+          </button>
+          
+          
+      </div>
+       <div class="modal-body">
+        
+         <ul>
+             <li id="nombre"></li>
+             <li id="apellido"></li>
+             <li id="nacionalidad"></li>
+         </ul>      
+         
+      </div>
+      
+        </div>
+     
+       </div> 
+      </div>       
+      
+  </main>
+       
+           
+    <main class="conteiner5" >
+     
+    <div class="modal " id="modal5" tabindex="-1" role="dialog" aria-labelledby="tituloventa5" aria-hidden="true" > 
+  <div class="modal-dialog" role="document">      
+ <div class="modal-content">
+      <div class="modal-header">
+            <h2 id="tituloventa5">comunicate si estas interazado con el proveedor</h2>
+          <button class="close" data-dismiss="modal" aria-label="cerrar">
+            <span aria-hidden="true">&times;</span>  
+          </button>
+          
+          
+      </div>
+       <div class="modal-body">
+        
+         <ul>
+             <li id="nombrep"></li>
+             <li id="apellidop"></li>
+             <li id="telefono"></li>
+             <li id="pais"></li>
+             <li id="email"></li>
+         </ul>      
+         
+      </div>
+      
+        </div>
+     
+       </div> 
+      </div>       
+      
+  </main>                  
+        
   
   
    

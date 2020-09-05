@@ -74,7 +74,7 @@ $(function() {
 		//console.log(enviarDato); 
        
     $.post('insert.php',enviarDato,function(response){
-           $('#almacen-form').trigger('reset');
+           $('#almacen-form').trigger('reset');//resetear el formulario para q este en blanco
            actualizarM();//llamar la funcion para que se muestre despues se agrege un nuevo libro
        });
            
@@ -98,7 +98,13 @@ $(function() {
                         <td>${muestra.ibsn}</td>
                         <td>${muestra.titulo}</td>
                         <td>${muestra.categoria}</td>
-                        <td>${muestra.idioma}</td>      
+                        <td>${muestra.idioma}</td>
+                        <td>
+                            <button class="boyonparaE btn btn-danger"  data-toggle="modal" data-target="#modal3">
+                               ELIMIANAR
+                            </button>
+                          
+                        </td>
                       </tr>
                          `
                 });
@@ -109,8 +115,28 @@ $(function() {
     });  
          
  } 
+    
+    
+    
      
+    $("#elim").click(function(e){
         
+        const eliminardato ={
+            ibsnE:$('#ibsnE').val()
+            
+        }
+        
+     $.post('borrar.php',eliminardato,function(respuesta){
+        $('#eliminar').trigger('reset'); 
+         console.log(respuesta);
+         actualizarM()
+         
+     });   
+        
+        
+      e.preventDefault();  
+        
+    });    
         
     
         

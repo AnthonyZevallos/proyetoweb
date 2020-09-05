@@ -256,6 +256,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                    <td>titulo</td>
                    <td>categoria</td>
                    <td>idioma</td>
+                   <td>btn</td>
                 </tr>   
                    
                </thead>
@@ -349,7 +350,39 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
       
   </main>
    
-   
+   <main class="conteiner3" >
+     
+    <div class="modal " id="modal3" tabindex="-1" role="dialog" aria-labelledby="tituloventa3" aria-hidden="true" > 
+  <div class="modal-dialog" role="document">      
+ <div class="modal-content">
+      <div class="modal-header">
+            <h2 id="tituloventa3">ingrese  el ibsn del libro</h2>
+          <button class="close" data-dismiss="modal" aria-label="cerrar">
+            <span aria-hidden="true">&times;</span>  
+          </button>
+          
+          
+      </div>
+       <div class="modal-body">
+           <form  method="post" id="eliminar"> 
+           
+        <input class="form-control mr-sm-2" type="text" name="ibsnE" id="ibsnE" placeholder="ingrese el ibsn" autocomplete="off" required/><br>                       
+               
+                        
+               <button type="submit" id="elim" value="INGRESAR" class="btn btn-danger form-control">ELIMINAR</button>
+           
+           
+           </form> 
+           
+         
+           </div>
+      
+        </div>
+     
+       </div> 
+      </div>       
+      
+  </main>
 
 
         
