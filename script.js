@@ -1,13 +1,13 @@
 
 $(function() {
-    
+    //buscar 
     console.log('hola');
     
     $('#para_ocultar').hide();
     
     actualizarM();//yamando la funcion para que muestre los datos de de los libros
     
-    $('#search').keyup(function(e){//query.js  cuando unput en id search
+    $('#search').keyup(function(e){//query.js  cuando ingresa el  unput en id search
        
      if ($('#search').val()){
          
@@ -82,6 +82,8 @@ $(function() {
        e.preventDefault(); //para que no se regresce la pagina    
      });
 		
+    //mostrando los datos de cada fila de la tabla  libros
+    
 	 function actualizarM(){
         
           //ajax ya te envia por defecto los datos por que no ponemos ningun evento    
@@ -94,13 +96,13 @@ $(function() {
            let modelo='';
             muestras.forEach(muestra =>{
                 modelo +=`
-                      <tr>
+                      <tr darIBSN="${muestra.ibsn}">
                         <td>${muestra.ibsn}</td>
                         <td>${muestra.titulo}</td>
                         <td>${muestra.categoria}</td>
                         <td>${muestra.idioma}</td>
                         <td>
-                            <button class="boyonparaE btn btn-danger"  data-toggle="modal" data-target="#modal3">
+                            <button class="botonparaE btn btn-danger"  data-toggle="modal" data-target="#modal3">
                                ELIMIANAR
                             </button>
                           
@@ -117,9 +119,32 @@ $(function() {
  } 
     
     
+//eliminando no yeva coma .val por que solo hay uno valor esta en formato json
+//obteniendo el balor del class del boton clickeado, el ibsn del libro para poder bandarlo al backen y el #ibsnE es el id del imput del modadal    
+    $(document).on('click','.botonparaE',function(){
+        let elementoI = $(this)[0].parentElement.parentElement;
+        let idI =$(elementoI).attr('darIBSN');
+        console.log(idI);
+        
+      $(document).on('click','#elim',function(e){
+          
+         let eliminardato=$('#ibsnE').val(); 
+           
+       $.post('borrar.php',{idI:idI,eliminardato:eliminardato},function(response){
+           console.log(response);
+           $('#eliminar').trigger('reset');
+           actualizarM();
+        });      
+        
+      // console.log(eliminardato);
+          
+        e.preventDefault();  
+      });    
+    });
+    
     
      
-    $("#elim").click(function(e){
+   /* $("#elim").click(function(e){
         
         const eliminardato ={
             ibsnE:$('#ibsnE').val()
@@ -127,6 +152,8 @@ $(function() {
         }
         
      $.post('borrar.php',eliminardato,function(respuesta){
+         
+         
         $('#eliminar').trigger('reset'); 
          console.log(respuesta);
          actualizarM()
@@ -136,7 +163,7 @@ $(function() {
         
       e.preventDefault();  
         
-    });    
+    }); */   
         
     
         

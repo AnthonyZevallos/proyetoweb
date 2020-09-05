@@ -1,7 +1,7 @@
 <?php
 
 include('login.php');
- $query="SELECT ibsn,titulo,categoria,autor,nombre,apellido,di_proveedor,nombre_provedor,apellido_provedor,idioma,precio FROM libros as a 
+ $query="SELECT ibsn,titulo,categoria,autor,nombre,apellido,di_proveedor,nombre_provedor,apellido_provedor,idioma,precio,descripcion FROM libros as a 
 INNER JOIN autor as b ON  a.autor = b.id_autor 
 INNER JOIN proveedor as c ON  c.id_provedor =a.di_proveedor";
   
@@ -21,7 +21,8 @@ INNER JOIN proveedor as c ON  c.id_provedor =a.di_proveedor";
       'nombre_provedor' => $row['nombre_provedor'],
       'apellido_provedor' => $row['apellido_provedor'],         
       'idioma' => $row['idioma'],
-      'precio' => $row['precio'],         
+      'precio' => $row['precio'], 
+      'descripcion' => $row['descripcion']     
      );   
      
  }

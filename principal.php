@@ -50,15 +50,16 @@
                   <table id="tablacontenedor" class="table table-bordered table.sm">
                      <thead>
                   <tr>
-                   <td class="table-success">ibsn</td>
+                   
                    <td class="table-success">titulo</td>
+                   <td class="table-success">descripcion</td>
                    <td class="table-success">categoria</td>
                    <td class="table-success">id autor</td>
                    <td class="table-success">nombre autor</td>
-                   <td class="table-success">apellido autor</td>
+                   
                    <td class="table-success">id proveedor</td>
                    <td class="table-success">nombre proveedor</td>
-                   <td class="table-success">apellido proveedor</td>
+                   
                    <td class="table-success">idioma</td>
                    <td class="table-success">precio</td>
                  </tr>   

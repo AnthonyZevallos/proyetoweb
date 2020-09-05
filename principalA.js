@@ -4,7 +4,7 @@ $(function() {
     
     
        
-   
+   //para buscar libros
        
       $('.btn').click(function(e){
            
@@ -24,19 +24,20 @@ $(function() {
             muestras.forEach(muestra =>{
                 modelo +=`
                       <tr autor="${muestra.autor}" proveedor="${muestra.di_proveedor}">
-                        <td>${muestra.ibsn}</td>
+                        
                         <td>${muestra.titulo}</td>
-                        <td>${muestra.categoria}</td>
+                        <td>${muestra.descripcion}</td>
+                        <td>${muestra.categoria}</td>                        
                         <td>${muestra.autor}</td>
                         <td>
                         <a href="#" class="mostrarAutor" data-toggle="modal" data-target="#modal4">${muestra.nombre}<a>
                         </td>
-                        <td>${muestra.apellido}</td>
+                        
                         <td>${muestra.di_proveedor}</td>
                          <td>
                         <a href="#" class="mostrarProveedor" data-toggle="modal" data-target="#modal5">${muestra.nombre_provedor}</a> 
                         </td>
-                        <td>${muestra.apellido_provedor}</td>
+                        
                         <td>${muestra.idioma}</td>
                         <td>${muestra.precio}</td>
                       </tr>
@@ -74,7 +75,7 @@ $(function() {
     
     
     
-    
+  //mostrando libros  
     
 $.ajax({
         
@@ -86,19 +87,20 @@ $.ajax({
             muestras.forEach(muestra =>{
                 modelo +=`
                       <tr autor="${muestra.autor}" proveedor="${muestra.di_proveedor}">
-                        <td>${muestra.ibsn}</td>
+                        
                         <td>${muestra.titulo}</td>
+                        <td>${muestra.descripcion}</td>
                         <td>${muestra.categoria}</td>
                         <td>${muestra.autor}</td>
                         <td>
                         <a href="#" class="mostrarAutor" data-toggle="modal" data-target="#modal4">${muestra.nombre}<a>
                         </td>
-                        <td>${muestra.apellido}</td>
+                        
                         <td>${muestra.di_proveedor}</td>
                         <td>
                         <a href="#" class="mostrarProveedor" data-toggle="modal" data-target="#modal5">${muestra.nombre_provedor}</a> 
                         </td>
-                        <td>${muestra.apellido_provedor}</td>
+                        
                         <td>${muestra.idioma}</td>
                         <td>${muestra.precio}</td>
                       </tr>
@@ -144,6 +146,9 @@ $(document).on('click','.mostrarProveedor',function(){
     });
     
       console.log(idP);
-});    
+}); 
+    
+    
+    
     
 });

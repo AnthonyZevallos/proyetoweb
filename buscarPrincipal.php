@@ -5,7 +5,7 @@ $search = $_POST['search'];
 
 if(isset($search)){
     
-$busqueda="SELECT ibsn,titulo,categoria,autor,nombre,apellido,di_proveedor,nombre_provedor,apellido_provedor,idioma,precio FROM libros as a 
+$busqueda="SELECT ibsn,titulo,categoria,autor,nombre,apellido,di_proveedor,nombre_provedor,apellido_provedor,idioma,precio,descripcion FROM libros as a 
 INNER JOIN autor as b ON  a.autor = b.id_autor 
 INNER JOIN proveedor as c ON  c.id_provedor =a.di_proveedor where titulo LIKE '%".$search."%' OR categoria LIKE '%".$search."%' OR nombre LIKE '%".$search."%' ";  
     
@@ -31,7 +31,8 @@ INNER JOIN proveedor as c ON  c.id_provedor =a.di_proveedor where titulo LIKE '%
              'nombre_provedor' => $row['nombre_provedor'],
              'apellido_provedor' => $row['apellido_provedor'],         
              'idioma' => $row['idioma'],
-             'precio' => $row['precio'] 
+             'precio' => $row['precio'], 
+             'descripcion' => $row['descripcion'] 
       );
         
     }
