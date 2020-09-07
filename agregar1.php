@@ -77,14 +77,14 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
     $response = "select * from autor";  
     $result = $conexion->query($response);
     if (!$result) die ("Falló el acceso a la base de datos thony");
-    print_r($result);
+   // print_r($result);
     $sql_query =mysqli_query($conexion,$response);
   /*aca para la  las claves  de la otra tabla me envie proveedor*/
 
     $respoprovee ="select * from proveedor";
     $resupro =$conexion->query($respoprovee);
     if(!$resupro) die ("fallo el acceso a la base de datos thony");
-     print_r($resupro); 
+    // print_r($resupro); 
     $sql_almacen=mysqli_query($conexion,$respoprovee);
 
 
@@ -100,10 +100,13 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="enlaces/bootstrap-4.5.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/documeto.css">
     <title>agregar</title>
     
 </head>
-<body>
+<body id="prueva">
+    
+    
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -134,11 +137,14 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
       
     
   </div>
-</nav> 
+</nav>
+
  
- <div class="container p-4">
+   
+ 
+ <div class="container p-4 " >
       <div class="row">
-          <div class="col-md-5">
+          <div class="col-md-5">  
            
              <div class="card">
                
@@ -252,16 +258,16 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
            <table class="table table-bordered table.sm">
                <thead>
                   <tr>
-                   <td>ibsn</td>
-                   <td>titulo</td>
-                   <td>categoria</td>
-                   <td>idioma</td>
-                   <td>btn</td>
+                   <td class="table-success">ibsn</td>
+                   <td class="table-success">titulo</td>
+                   <td class="table-success">categoria</td>
+                   <td class="table-success">idioma</td>
+                   <td class="table-success">btn</td>
                 </tr>   
                    
                </thead>
                
-               <tbody id="cuerpomostrar">
+               <tbody id="cuerpomostrar" style="color:white ">
                    
                    
                </tbody>

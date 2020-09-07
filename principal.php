@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="enlaces/bootstrap-4.5.2-dist/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="css/documeto.css">
     
     <title>Document</title>
      
 </head>
-<body>
+<body id="pruevaPrincipal">
   
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,7 +43,10 @@
     
   </div>
 </nav> 
-     <div class="container p-4">
+    
+    
+    
+     <div class="container p-4 ">
         <div class="row">
            <div class="col-md-12">
                <div>
@@ -66,7 +69,7 @@
                    
                     </thead> 
                      
-                    <tbody id="cuerpomostrar">
+                    <tbody id="cuerpomostrar" style="color:white">
                         
                         
                     </tbody> 

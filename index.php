@@ -8,11 +8,11 @@
      <link rel="stylesheet" href="enlaces/bootstrap-4.5.2-dist/css/bootstrap.min.css">
     <script src="enlaces/jquery-3.5.1.min.js"></script>
     <script src="enlaces/bootstrap-4.5.2-dist/js/bootstrap.min.js" ></script>
-   
+     <link rel="stylesheet" href="css/documeto.css">
      
     <title>Document</title>
 </head>
-<body>
+<body class="row m-0 bg-primary justify-content-center align-items-center vh-100 ">
     
  
 
@@ -47,30 +47,56 @@ require_once 'login.php';
         
     }
         
-    else
+    else  
     {
         /*--------formularios de para acceder los datos y haga las respectivas consultasss-----*/
         echo <<< _END
            
+        <div class="card">
+        <img src="img/Lot-of-books-in-library_1600x900.jpg" class="card-img">
         
-        <div class="alert alert-secondary" role="alert">
-            <h1>Ingresa</h1>
+        <div class="card-img-overlay container " >
+          
+        
+           <div class="row"> 
+             
+             <div class="col-md-4">
+             
+             </div>
+             
+           <div class="col-md-4 p-7">
+           <br>
+           <br>
+           <br>
+           <br> 
+           <br>
+           <br>
+           <h1  class="text-center" >Ingresa</h1>
+           <br>
             
         <form class="form-inline my-2 my-lg-0" action="index.php" method="post"><pre>
-        <input class="form-control mr-sm-2" type="email" name="user" placeholder="Usuario" required/><br>
-        <input class="form-control mr-sm-2" type="password" name="pass" placeholder="Password" autocomplete="off" required/>
+               <input class="form-control mr-sm-2" type="email" name="user" placeholder="Usuario" required/><br>
+               <input class="form-control mr-sm-2" type="password" name="pass" placeholder="Password" autocomplete="off" required/>
                     
-               <button type="submit" value="INGRESAR" class="btn btn-primary">INGRESAR</button><br>
-                                <a href='signup.php'>REGISTRARSE</a>
+                      <button type="submit" value="INGRESAR" class="btn btn-primary">INGRESAR</button><br>
+                                    <a href='signup.php'>REGISTRARSE</a>
         </form>
-        
+             </div> 
+               <div class="col-md-4">
+                 
+                
+               </div>
+            </div>   
+           
+           
         </div>
-        
+       
+        </div>
    
        _END;
         
     }
-    
+
      
     function mysql_fix_string($coneccion, $string)
     {

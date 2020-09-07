@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@200;400;500&display=swap');
+*{
+    
+    font-family: 'Grandstander', cursive;
+}
+
+
+#prueva{
+    
+background-image: url(../img/oscuroagregar.jpg);    
+background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    
+    
+}
+
+#pruevaPrincipal{
+    
+background-image: url(../img/agregar1.jpg);    
+background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    
+    
+}
+
+#signupp{
+    
+background-image: url(../img/oscuroagregar.jpg);    
+background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    
+    
+}

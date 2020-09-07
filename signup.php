@@ -10,13 +10,13 @@
      <link rel="stylesheet" href="enlaces/bootstrap-4.5.2-dist/css/bootstrap.min.css">
     <script src="enlaces/jquery-3.5.1.min.js"></script>
     <script src="enlaces/bootstrap-4.5.2-dist/js/bootstrap.min.js" ></script>
-     
+     <link rel="stylesheet" href="css/documeto.css"> 
 
      <title>Document</title>
 
  </head>
 
- <body>
+ <body id="signupp">
 
      
 
@@ -45,17 +45,34 @@
         echo <<< _END
         
         
-        <div id="contenedor">
-            <h1>Regístrate</h1> 
+        <div class="conteiner">
+        
+        <div class="row">
+         <div class="col-md-4"></div>
+           <div class="col-md-4">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 class="text-center" style="color:white">Regístrate</h1> 
+            <br>
             
         <form class="form-inline my-2 my-lg-0" action="signup.php" method="post"><pre>
-        <input class="form-control mr-sm-2" type="email" name="user" placeholder="Ingrese Email" autocomplete="off" required/><br>
-        <input class="form-control mr-sm-2" type="password" name="pass" placeholder="Ingrese Password" autocomplete="off" required/>
-                 <input type="hidden" name="reg" value="yes">     
-            <button type="submit" value="TO REGISTER" class="btn btn-primary">TO REGISTER</button><br>
-                                 <a href='index.php'>ATRAS</a>     
+                   <input class="form-control mr-sm-2" type="email" name="user" placeholder="Ingrese Email" autocomplete="off" required/><br>
+                   <input class="form-control mr-sm-2" type="password" name="pass" placeholder="Ingrese Password" autocomplete="off" required/>
+                   <input type="hidden" name="reg" value="yes">     
+                        <button type="submit" value="TO REGISTER" class="btn btn-primary">TO REGISTER</button><br>
+                                         <a href='index.php'>ATRAS</a>     
         </form>
         
+          </div>
+          
+         <div class="col-md-4"></div>  
+        
+        </div>
         </div>
         _END;
     
