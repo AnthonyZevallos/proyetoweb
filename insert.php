@@ -2,7 +2,7 @@
 include('login.php');
 
 if(isset($_POST['ibsn'])){
-   $ibsn =$_POST['ibsn'];
+   $ibsn =md5($_POST['ibsn']);
    $titulo =$_POST['titulo']; 
    $categoria =$_POST['categoria'];
    $fechaPublicacion =$_POST['fechaPublicacion'];

@@ -130,9 +130,10 @@ $(function() {
         
       $(document).on('click','#elim',function(e){
           
-         let eliminardato=$('#ibsnE').val(); 
-           
-       $.post('borrar.php',{idI:idI,eliminardato:eliminardato},function(response){
+        
+          let eliminardato=$('#ibsnE').val(); 
+          console.log(eliminardato); 
+      $.post('borrar.php',{idI,eliminardato},function(response){
            console.log(response);
            $('#eliminar').trigger('reset');
            actualizarM();
@@ -146,28 +147,8 @@ $(function() {
     
     
      
-   /* $("#elim").click(function(e){
-        
-        const eliminardato ={
-            ibsnE:$('#ibsnE').val()
-            
-        }
-        
-     $.post('borrar.php',eliminardato,function(respuesta){
-         
-         
-        $('#eliminar').trigger('reset'); 
-         console.log(respuesta);
-         actualizarM()
-         
-     });   
-        
-        
-      e.preventDefault();  
-        
-    }); */   
-        
-    
+     
+ 
           
    });  
 
