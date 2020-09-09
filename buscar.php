@@ -3,7 +3,9 @@
 
 include('login.php');
 
-$search = $_POST['search'];
+//el myqli_real_escape_string una funcion anti inyecciones
+
+$search = mysqli_real_escape_string($conexion,$_POST['search']);
 
 if(isset($search)){
     

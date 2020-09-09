@@ -1,15 +1,15 @@
 <?php
 include('login.php');
-
-$search = $_POST['search'];
+            
+$search = mysqli_real_escape_string($conexion,$_POST['search']);
 
 if(isset($search)){
     
 $busqueda="SELECT idLIBRO,ibsn,titulo,categoria,autor,nombre,apellido,di_proveedor,nombre_provedor,apellido_provedor,idioma,precio,descripcion FROM libros as a 
 INNER JOIN autor as b ON  a.autor = b.id_autor 
-INNER JOIN proveedor as c ON  c.id_provedor =a.di_proveedor where titulo LIKE '%".$search."%' OR categoria LIKE '%".$search."%' OR nombre LIKE '%".$search."%' ";  
+INNER JOIN proveedor as c ON  c.id_provedor =a.di_proveedor where titulo LIKE '%".$search."%' OR categoria LIKE '%".$search."%' OR nombre LIKE '%".$search."%' OR descripcion LIKE '%".$search."%' ";  
     
-   
+    
     
     $RESULT=$conexion->query($busqueda);
     

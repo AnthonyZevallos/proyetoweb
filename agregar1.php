@@ -4,9 +4,9 @@
   /*almacenando autor del libro*/
    if(isset($_POST['nombreA']) && isset($_POST['apellidoA']) && isset($_POST['nacionalidadA'])){
        
-      $nombreA = $_POST['nombreA'];
-      $apellidoA = $_POST['apellidoA'];
-      $nacionalidadA = $_POST['nacionalidadA'];
+      $nombreA = mysqli_real_escape_string($conexion,$_POST['nombreA']);   
+      $apellidoA = mysqli_real_escape_string($conexion,$_POST['apellidoA']) ;
+      $nacionalidadA = mysqli_real_escape_string($conexion,$_POST['nacionalidadA']);
        
      $exite ="select * from autor where nombre ='$nombreA' or apellido=' $apellidoA' or nacionalidad='$nacionalidadA' "; 
        
@@ -34,13 +34,13 @@
 /*almacenando al dueño del libro*/
 
 if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telefonoP']) && isset($_POST['paisP']) && isset($_POST['emailP']) && isset($_POST['dniP'])){
-       
-      $nombreP = $_POST['nombreP'];
-      $apellidoP = $_POST['apellidoP'];
-      $telefonoP = $_POST['telefonoP'];
-      $paisP = $_POST['paisP'];
-      $emailP = $_POST['emailP'];
-      $dniP = $_POST['dniP'];
+                  
+      $nombreP = mysqli_real_escape_string($conexion,$_POST['nombreP']);
+      $apellidoP = mysqli_real_escape_string($conexion,$_POST['apellidoP']);
+      $telefonoP = mysqli_real_escape_string($conexion,$_POST['telefonoP']);
+      $paisP = mysqli_real_escape_string($conexion,$_POST['paisP']);
+      $emailP = mysqli_real_escape_string($conexion,$_POST['emailP']);
+      $dniP = mysqli_real_escape_string($conexion,$_POST['dniP']);
     
        
      $exitepro ="select * from proveedor where nombre_provedor ='$nombreP' or dni='$dniP'  "; 
@@ -119,7 +119,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
        <li class="nav-item active">
          <a class="nav-link" href="#"  tabindex="-1" aria-disabled="true">agregar </a>
        </li>
-       <li class="nav-item active">
+     <!--  <li class="nav-item active"> continuara....
          <a class="nav-link" href="#"  tabindex="-1" aria-disabled="true">informacion</a>
        </li>
        <li class="nav-item active">
@@ -127,7 +127,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
        </li>
        <li class="nav-item">
          <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">autores</a>
-       </li>
+       </li> -->
     </ul>
     
     <form class="form-inline my-2 my-lg-0">
@@ -155,7 +155,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                        
                          <div class="form-group">
                           
-                           <input type="text" class="form-control" id="ibsn" name="ibsn" placeholder="agregar el ibsn">  
+                           <input type="text" class="form-control" id="ibsn" name="ibsn" placeholder="agregar el ibsn recuerde para poder eliminar">  
                          </div>
                          <div class="form-group">
                            <input type="text" class="form-control" id="titulo"  name="titulo" placeholder="titulo">     
@@ -212,12 +212,11 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                   <label for="idioma">Que idioma esta escrita?</label>
                     <select name="idioma" id="idioma" class="form-control">
                                     <option class="form-control" value="Español">Español</option>
-                                    <option class="form-control" value="Ingles">Inglés</option>
-                                    <option class="form-control" value="Chino">Chino</option>
-                                    <option class="form-control" value="Arabe">Arabe</option>
+                                    <option class="form-control" value="Ingles">Inglés</option>            
                                     <option class="form-control" value="Portugues">Portugués</option>
                                     <option class="form-control" value="Ruso">Ruso</option>
                                     <option class="form-control" value="Quechua">Quechua</option>
+                                    
                                     
                   </select>   
                          
