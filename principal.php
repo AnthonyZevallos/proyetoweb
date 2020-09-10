@@ -46,10 +46,16 @@
        
     </ul>
     
+    
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" id="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <ul class="nav justify-content-end">
+                
+                <li class="nav-item "><a href="index.php" class="nav-link">Salir</a></li>
+                
+     </ul>
     
   </div>
   
@@ -110,9 +116,9 @@
        <div class="modal-body">
         
          <ul>
-        <b>nombre</b><li id="nombre"></li>
-        <b>apellidos</b><li id="apellido"></li>
-        <b>nacionalidad</b><li id="nacionalidad"></li>
+        <b>nombre </b><li id="nombre"></li><!--nombre-->
+        <b>apellidos</b><li id="apellido"></li><!--apellidos-->
+        <b>nacionalidad</b><li id="nacionalidad"></li><!--nacionalidad-->
          </ul>      
          
       </div>
@@ -131,7 +137,7 @@
   <div class="modal-dialog" role="document">      
  <div class="modal-content">
       <div class="modal-header">
-            <h2 id="tituloventa5">comunicate si estas interazado con el proveedor</h2>
+            <h2 id="tituloventa5">comunicate si estas interazado con el proveedor</h2> 
           <button class="close" data-dismiss="modal" aria-label="cerrar">
             <span aria-hidden="true">&times;</span>  
           </button>

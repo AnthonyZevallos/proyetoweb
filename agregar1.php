@@ -114,7 +114,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
    
-    <a class="navbar-brand" href="principal.php">libros</a>
+    <a class="navbar-brand" href="principal.php">libros</a><!--libros-->
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
        <li class="nav-item active">
          <a class="nav-link" href="#"  tabindex="-1" aria-disabled="true">agregar </a>
@@ -130,11 +130,17 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
        </li> -->
     </ul>
     
+    
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" id="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-      
+  
+     <ul class="nav justify-content-end">
+                
+                <li class="nav-item "><a href="index.php" class="nav-link">Salir</a></li>
+                
+    </ul> 
     
   </div>
 </nav>
@@ -149,34 +155,34 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
              <div class="card">
                
                  <div class="card-body">
-                     <h2 class="text-center">agrega los datos al formulario</h2>
+                     <h2 class="text-center">agrega los datos al formulario</h2><!---->
                     
                      <form id="almacen-form" method="post"  >
                        
                          <div class="form-group">
                           
-                           <input type="text" class="form-control" id="ibsn" name="ibsn" placeholder="agregar el ibsn recuerde para poder eliminar">  
+                           <input type="text" class="form-control" id="ibsn" name="ibsn" placeholder="agregar el ibsn recuerde para poder eliminar"><!---->  
                          </div>
                          <div class="form-group">
-                           <input type="text" class="form-control" id="titulo"  name="titulo" placeholder="titulo">     
+                           <input type="text" class="form-control" id="titulo"  name="titulo" placeholder="titulo">    
        
                          </div>
                     <label for="categoria">categoria</label>
                          <select name="categoria" id="categoria" class="form-control">
-                                    <option class="form-control" value="matematica">matemáticas</option>
+                                    <option class="form-control" value="matemáticas">matemáticas</option>
                                     <option class="form-control" value="literatura">literatura</option>
-                                    <option class="form-control" value="politica">politica</option>
+                                    <option class="form-control" value="politica">politica </option>
                                     <option class="form-control" value="cultura">cultura</option>
                                     <option class="form-control" value="tecnologia">ciencia y tecnología</option>
-                                    <option class="form-control" value="medicina">ciencia y medicina</option>
+                                    <option class="form-control" value="medicina">ciencia y medicina</option> 
                                     
                          </select>
-                         <label for="publicacion">fecha de publicación</label>
+                         <label for="publicacion">fecha de publicación</label><!---->
                          <div class="form-group">
                            <input type="date" class="form-control" id="fechaPublicacion" name="fechaPublicacion"> 
                          </div>
                          
-                   <a class='form-group' data-toggle='modal' data-target='#modal1' >elige el autor Clik aqui agregar</a>    
+                   <a class='form-group' data-toggle='modal' data-target='#modal1' >elige actor Clik aqui agregar</a>    
                          <select name="fkautor" id="fkautor" class="form-control">
                       <?php 
                         while($row=mysqli_fetch_array($sql_query ,MYSQLI_NUM)){
@@ -190,7 +196,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                             
                         </select> 
                     
-                 <a class='form-group' data-toggle='modal' data-target='#modal2' >si no figuras Clik aqui agregar</a> 
+                 <a class='form-group' data-toggle='modal' data-target='#modal2' >si no figura  Clik aqui agregar</a>
                      <select name="fkproveedor" id="fkproveedor" class="form-control">
                       <?php 
                         while($row=mysqli_fetch_array($sql_almacen ,MYSQLI_NUM)){
@@ -207,13 +213,13 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                          
                          <br> 
                         <div class="form-group">
-                           <input type="text" class="form-control" id="editorial" name="editorial" placeholder="editorial">  
+                           <input type="text" class="form-control" id="editorial" name="editorial" placeholder="editorial"><!--editorial-->  
                          </div>
                   <label for="idioma">Que idioma esta escrita?</label>
                     <select name="idioma" id="idioma" class="form-control">
                                     <option class="form-control" value="Español">Español</option>
-                                    <option class="form-control" value="Ingles">Inglés</option>            
-                                    <option class="form-control" value="Portugues">Portugués</option>
+                                    <option class="form-control" value="Inglés">Inglés</option>            
+                                    <option class="form-control" value="Portugués">Portugués</option>
                                     <option class="form-control" value="Ruso">Ruso</option>
                                     <option class="form-control" value="Quechua">Quechua</option>
                                     
@@ -223,7 +229,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
                       <br>
                      <div class="form-group">
                            
-                           <input type="text" class="form-control" id="precio" name="precio" placeholder="precio">  
+                           <input type="text" class="form-control" id="precio" name="precio" placeholder="precio s/">  
                      </div>
                      
                      
@@ -289,7 +295,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
  <div class="modal-content">
      <div id="alerta"></div>
       <div class="modal-header">
-            <h2 id="tituloventa1">ingrese datos del autor</h2>
+            <h2 id="tituloventa1">ingrese datos del autor</h2><!---->
           <button class="close" data-dismiss="modal" aria-label="cerrar">
             <span aria-hidden="true">&times;</span>  
           </button>
@@ -301,7 +307,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
            
         <input class="form-control mr-sm-2" type="text" name="nombreA" placeholder="nombre del autor" autocomplete="off" required/><br>
         <input class="form-control mr-sm-2" type="text" name="apellidoA" placeholder="apellido completo" autocomplete="off" required/><br>
-        <input class="form-control mr-sm-2" type="text" name="nacionalidadA" placeholder="nacionalidad" autocomplete="off" required/><br>           
+        <input class="form-control mr-sm-2" type="text" name="nacionalidadA" placeholder="nacionalidad" autocomplete="off" required/><br>          
                     
                <button type="submit" value="INGRESAR" class="btn btn-primary form-control">INGRESAR</button>
            
