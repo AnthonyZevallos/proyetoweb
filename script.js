@@ -1,7 +1,7 @@
 
 $(function() {
     //buscar 
-    console.log('hola');
+   
     
     $('#para_ocultar').hide();
     
@@ -49,11 +49,120 @@ $(function() {
          
         
     })   ;
-    //agregando libro
+    //agregando libro y validando
     
 
    $('#almacen-form').submit(function(e){
+       
+       var ibsn, titulo, categoria, fecha,fkautor,fkprovedor,editorial,idioma,precio,descripcion;
+         
+       ibsn =$('#ibsn').val();
+       titulo =$('#titulo').val();
+       categoria =$('#categoria').val();
+       fecha =$('#fechaPublicacion').val();
+       fkautor =$('#fkautor').val();
+       fkprovedor =$('#fkproveedor').val();
+       editorial =$('#editorial').val();
+       idioma =$('#idioma').val();
+       precio =$('#precio').val();
+       descripcion =$('#descripcion').val();
+       
+       
+   ibs = /^[0-9]{1,5}\-[0-9]{1,5}\-[0-9]{1,5}\-[0-9]{1,5}\-[0-9]{1,3}$/;//ibsn - - - -  
+   descri =/\w\s/;//numeros letras espacio
+     ti=/\w/; //numeros leteras 
+    pre=/^\$+[0-9]{0,5}$/;   
+    
+    if( ibsn === "" ||  titulo === "" || categoria === "" || fecha=== "" || fkautor === "" || fkprovedor === "" || editorial === "" || idioma === "" || precio === "" || descripcion === ""){
         
+        alert("todos los campos son obligatorios");  
+            return false;
+    } 
+    else if(ibsn.length>24){
+     alert("el ibsn es muy largo");  
+            return false;       
+            
+    }
+    else if(!ibs.test(ibsn)){
+     alert("el ibsn no es valido");  
+            return false;       
+            
+    } //titulo 
+    else if(titulo.length>40){
+     alert("el titulo es muy largo");  
+            return false;       
+            
+    }
+    else if(!descri.test(titulo)){
+     alert("el titulo debe tener  un espacio minimo");  
+            return false;       
+            
+    } //categoria    
+     else if(categoria.length>30){
+     alert("la categoria es muy largo");  
+            return false;       
+            
+    } 
+    else if(!ti.test(categoria)){
+     alert("el categoria no es valido");  
+            return false;       
+            
+    } //fecha    
+    else if(fecha.length>10){
+     alert("la fecha esta incorrecta");  
+            return false;       
+            
+    }//editorial
+    else if(editorial.length>50){
+     alert("editorial demaciado largo");  
+            return false;       
+            
+    }
+    else if(!descri.test(editorial)){
+     alert("el editorial no es valido");  
+            return false;       
+            
+    }   
+       //idioma
+     else if(idioma.length>15){
+     alert("idima demaciado largo");  
+            return false;       
+            
+    }
+    else if(!ti.test(idioma)){
+     alert("el idioma no es valido");  
+            return false;       
+            
+    }   
+       //precio 
+    else if(precio.length>5){
+     alert("precio muy caro");  
+            return false;       
+            
+    }
+    /* else if(isNaN(precio)){ //solo para numeros
+     alert("el precio no es numerico");  
+            return false;       
+            
+    } */ 
+    else if(!pre.test(precio)){
+     alert("es necesario el sinvolo $ en el precio");  
+            return false;       
+            
+    }   
+     //descripcion   
+    else if(descripcion.length>150){
+     alert("la descripcion es demacio largo");  
+            return false;       
+            
+    } 
+     else if(!descri.test(descripcion)){
+     alert("no puedes pomer varibles extraños");  
+            return false;       
+            
+    }    
+       
+       
         const enviarDato ={
             
          ibsn:$('#ibsn').val(),

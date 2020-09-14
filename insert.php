@@ -1,9 +1,10 @@
 <?php
 include('login.php'); 
 
-if(isset($_POST['ibsn'])){
+if(isset($_POST['ibsn']) ){
              
    $ibsn =md5($_POST['ibsn']);
+    
    $titulo = mysqli_real_escape_string($conexion,$_POST['titulo']); 
    $categoria = mysqli_real_escape_string($conexion,$_POST['categoria']);
    $fechaPublicacion = mysqli_real_escape_string($conexion,$_POST['fechaPublicacion']);
@@ -13,6 +14,8 @@ if(isset($_POST['ibsn'])){
    $idioma = mysqli_real_escape_string($conexion,$_POST['idioma']);
    $precio = mysqli_real_escape_string($conexion,$_POST['precio']);         
    $descripcion = mysqli_real_escape_string($conexion,$_POST['descripcion']);  
+    
+
     
     
    $query ="INSERT INTO libros (idLIBRO,ibsn,titulo,categoria,fecha,autor,di_proveedor,editorial,idioma,precio,descripcion) VALUES "."(null,'$ibsn','$titulo','$categoria','$fechaPublicacion','$fkautor','$fkproveedor','$editorial','$idioma','$precio','$descripcion')";

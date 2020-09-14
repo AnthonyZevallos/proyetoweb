@@ -1,13 +1,19 @@
 $(function() {
     
-  console.log('hola');
+  
     
     
        
    //para buscar libros
        
       $('.btn').click(function(e){
-           
+          var bus= $('#search').val();
+          
+          if(bus ===""){
+             alert("no hay nada en el buscador");
+              return false;
+             }
+          
            const search= $('#search').val();
           
         $.ajax({
