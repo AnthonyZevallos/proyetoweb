@@ -162,7 +162,7 @@
                       <br>
                      <div class="form-group">
                            
-                           <input type="text" class="form-control" id="precio" name="precio" placeholder="precio s/">  
+                           <input type="text" class="form-control" id="precio" name="precio" placeholder="precio $xx">  
                      </div>
                      
                      

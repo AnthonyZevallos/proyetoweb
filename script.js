@@ -67,8 +67,8 @@ $(function() {
        precio =$('#precio').val();
        descripcion =$('#descripcion').val();
        
-       
-   ibs = /^[0-9]{1,5}\-[0-9]{1,5}\-[0-9]{1,5}\-[0-9]{1,5}\-[0-9]{1,3}$/;//ibsn - - - -  
+   ibs =/^[0-9\-]{10,24}$/;    
+   //ibs = /^[0-9]{1,5}\-[0-9]{1,5}\-[0-9]{1,5}\-[0-9]{1,5}\-[0-9]{1,3}$/;//ibsn - - - -  
    descri =/\w\s/;//numeros letras espacio
      ti=/\w/; //numeros leteras 
     pre=/^\$+[0-9]{0,5}$/;   
