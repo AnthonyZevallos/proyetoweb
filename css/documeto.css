@@ -34,6 +34,13 @@ background-attachment: fixed;
     
     
 }
+#inde{
+ background-image: url(../img/Lot-of-books-in-library_1600x900.jpg);    
+background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;   
+    
+}
 
 #cuerpomostrar{
   background-color:rgb(68,58,59);
@@ -41,3 +48,16 @@ background-attachment: fixed;
     
     
 }
+
+#csingup{
+  background-color:rgb(68,58,59);
+  opacity:0.6;   
+    
+    
+}
+#cindex{
+   background-color:rgb(68,58,59);
+  opacity:0.6;    
+}
+
+

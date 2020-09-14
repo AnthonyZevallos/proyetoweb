@@ -101,7 +101,7 @@ $.ajax({
                         <td>
                         <a href="#" class="mostrarAutor" data-toggle="modal" data-target="#modal4">${muestra.nombre}<a>
                         </td>
-                        
+                         
                         <td>${muestra.di_proveedor}</td>
                         <td>
                         <a href="#" class="mostrarProveedor" data-toggle="modal" data-target="#modal5">${muestra.nombre_provedor}</a> 

@@ -12,7 +12,7 @@
      
     <title>Document</title>
 </head>
-<body class="row m-0 bg-primary justify-content-center align-items-center vh-100 ">
+<body id="inde" class="row m-0  justify-content-center align-items-center vh-100 ">
     
  
 
@@ -52,27 +52,15 @@ require_once 'login.php';
         /*--------formularios de para acceder los datos y haga las respectivas consultasss-----*/
         echo <<< _END
            
-        <div class="card">
-        <img src="img/Lot-of-books-in-library_1600x900.jpg" class="card-img">
+       
         
-        <div class="card-img-overlay container " >
-          
-        
-           <div class="row"> 
-             
-             <div class="col-md-4">
-             
-             </div>
-             
-           <div class="col-md-4 p-7">
-           <br>
-           <br>
-           <br>
-           <br> 
-           <br>
-           <br>
-           <h1  class="text-center" >Ingresa</h1>
-           <br>
+       <div id="cindex">
+       
+       <div class="container">
+           
+           
+           <h1  class="text-center" style="color:black" >Ingresa</h1><br>
+           
             
         <form class="form-inline my-2 my-lg-0" action="index.php" method="post"><pre>
                <input class="form-control mr-sm-2" type="email" name="user" placeholder="Usuario" required/><br>
@@ -81,17 +69,12 @@ require_once 'login.php';
                       <button type="submit" value="INGRESAR" class="btn btn-primary">INGRESAR</button><br>
                                     <a href='signup.php'>REGISTRARSE</a>
         </form>
-             </div> 
-               <div class="col-md-4">
-                 
-                
-               </div>
-            </div>   
+              
+             
            
-           
+        </div>
         </div>
        
-        </div>
    
        _END;
         

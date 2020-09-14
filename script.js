@@ -190,7 +190,145 @@ $(function() {
            
        e.preventDefault(); //para que no se regresce la pagina    
      });
-		
+	
+    $('#AutoP').submit(function(e){
+        
+       var nombA, apeA, nacioA;
+         
+       nombA =$('#nombreA').val();
+       apeA =$('#apellidoA').val();
+       nacioA =$('#nacionalidadA').val();
+        vali=/\w\s/;
+        va =/\w/;
+     
+        if(nombA ==="" || apeA ==="" || nacioA ===""){
+           alert("todo los campos son necesarios");
+            return false;
+           }
+        else if(nombA.length>20){
+              alert("el nombre demaciado largo");
+            return false;      
+           }
+        
+        else if(apeA.length>40){
+              alert("el apellido demaciado largo");
+            return false;      
+           }
+        else if(!vali.test(apeA)){
+              alert("apellido extraño");
+            return false;      
+           }
+        else if(nacioA.length>25){
+              alert("el nacionalidad demaciado largo");
+            return false;      
+           }
+        else if(!va.test(nacioA)){
+              alert("nacioalidad extraña");
+            return false;      
+           } 
+        
+        const guardando ={
+            nombreA:$('#nombreA').val(),
+            apellidoA:$('#apellidoA').val(),
+            nacionalidadA:$('#nacionalidadA').val()
+            }
+        $.post('agregandoAutor.php',guardando,function(response){
+            $('#AutoP').trigger('reset');
+           alert(response); 
+        
+        });
+        
+        
+      e.preventDefault();  
+    });
+    
+    
+    
+    $('#dueñoL').submit(function(e){
+        var nombr, apelli,telefono,pais,email,dni;
+        nombr=$('#nombreP').val();
+        apelli=$('#apellidoP').val();
+        telefono=$('#telefonoP').val();
+        pais=$('#paisP').val();
+        email=$('#emailP').val();
+        dni=$('#dniP').val();
+        
+        em= /\w+@\w+\.+[a-z]/;
+        vali=/\w\s/;
+        va =/\w/;
+        cel =/^\+[0-9]{0,12}$/;
+        
+    if(nombr === "" || apelli ==="" || telefono ==="" || pais === "" || email === "" || dni === "" ){
+       alert("todo los campos son obligatorios");
+       return false;
+       }
+        else if(nombr.length>15){
+         alert("el nombre es demaciado largo");
+         return false;        
+      }    
+        else if(apelli.length>25){
+         alert("el apellido es demaciado largo");
+         return false;        
+      }  
+        else if(!vali.test(apelli)){
+         alert("entradas extrañas");
+         return false;        
+      }
+        else if(telefono.length>14){
+         alert("el numero celular demaciado largo");
+         return false;        
+      } 
+         else if(!cel.test(telefono)){
+         alert("agrege el codigo de pais al numero de celular y tiene que ser numero");
+         return false;        
+      } 
+        else if(pais.length>20){
+         alert("el  pais no existe");
+         return false;        
+      }
+        else if(!va.test(pais)){
+         alert("pais incorrecto");
+         return false;        
+      }
+        else if(email.length>30){
+         alert("el email demaciado largo");
+         return false;        
+      }
+        else if(!em.test(email)){
+         alert("ingrese un email correcto");
+         return false;        
+      }
+        else if(dni.length>8){
+         alert("el numero dni demaciado largo");
+         return false;        
+      }
+        else if(isNaN(dni)){
+         alert("el dni no es numerico");
+         return false;        
+      }
+        
+      const almacenar ={
+          nombreP:$('#nombreP').val(),
+          apellidoP:$('#apellidoP').val(),
+          telefonoP:$('#telefonoP').val(),
+          paisP:$('#paisP').val(),
+          emailP:$('#emailP').val(),
+          dniP:$('#dniP').val()
+          
+      }  
+    $.post('agregandoDueño.php',almacenar,function(response){
+       $('#dueñoL').trigger('reset'); 
+       alert(response); 
+        
+    });    
+        
+        
+     e.preventDefault();   
+    });
+    
+    
+    
+    
     
     
     //mostrando los datos de cada fila de la tabla  libros
@@ -256,7 +394,7 @@ $(function() {
     
     
      
-     
+      
  
           
    });  

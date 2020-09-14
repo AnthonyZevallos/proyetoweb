@@ -1,75 +1,8 @@
 <?php 
- include "login.php"; 
-
-  /*almacenando autor del libro*/
-   if(isset($_POST['nombreA']) && isset($_POST['apellidoA']) && isset($_POST['nacionalidadA'])){
-       
-      $nombreA = mysqli_real_escape_string($conexion,$_POST['nombreA']);   
-      $apellidoA = mysqli_real_escape_string($conexion,$_POST['apellidoA']) ;
-      $nacionalidadA = mysqli_real_escape_string($conexion,$_POST['nacionalidadA']);
-       
-     $exite ="select * from autor where nombre ='$nombreA' or apellido=' $apellidoA' or nacionalidad='$nacionalidadA' "; 
-       
-       $resultado = $conexion->query($exite);
-       
-      if($resultado->num_rows > 0 ){
-          
-         /*ya esiste este autor baya a seleccionar*/
-                          
-        if (!$resultado) die ("Falló el acceso a la base de datos thony");  
-        }  
-      
-       else{
-               
-        $agregarA="insert  into autor (nombre,apellido,nacionalidad) values('$nombreA','$apellidoA','$nacionalidadA')";
-          
-            $resultadoA = $conexion->query( $agregarA);
-           if (!$resultadoA) die ("Falló el acceso a la base de datos thony");
-       
-       
-       }
-       
-   }
-
-/*almacenando al dueño del libro*/
-
-if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telefonoP']) && isset($_POST['paisP']) && isset($_POST['emailP']) && isset($_POST['dniP'])){
-                  
-      $nombreP = mysqli_real_escape_string($conexion,$_POST['nombreP']);
-      $apellidoP = mysqli_real_escape_string($conexion,$_POST['apellidoP']);
-      $telefonoP = mysqli_real_escape_string($conexion,$_POST['telefonoP']);
-      $paisP = mysqli_real_escape_string($conexion,$_POST['paisP']);
-      $emailP = mysqli_real_escape_string($conexion,$_POST['emailP']);
-      $dniP = mysqli_real_escape_string($conexion,$_POST['dniP']);
-    
-       
-     $exitepro ="select * from proveedor where nombre_provedor ='$nombreP' or dni='$dniP'  "; 
-       
-       $resultado = $conexion->query($exitepro);
-       
-      if($resultado->num_rows > 0 ){
-          
-         /*ya esiste este autor baya a seleccionar*/
-                          
-        if (!$resultado) die ("Falló el acceso a la base de datos thony");  
-        }  
-      
-       else{
-               
-        $agregarP="insert  into proveedor (nombre_provedor,apellido_provedor,telefono,pais_ciudad,email,dni) values('$nombreP','$apellidoP','$telefonoP','$paisP','$emailP','$dniP')";
-          
-            $resultadoP = $conexion->query( $agregarP);
-           if (!$resultadoP) die ("Falló el acceso a la base de datos thony");
-       
-       
-       }
-       
-   }
-    
+ include "login.php";  
 
 
 
-    
 
 
 
@@ -249,6 +182,7 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
              </div>
               
           </div>
+          
           <div class="col-md-7 ">
            <div class="card my-4" id="para_ocultar">
                <div class="card-body">
@@ -303,11 +237,11 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
           
       </div>
        <div class="modal-body">
-           <form action="agregar1.php" method="post"> 
+           <form id="AutoP" method="post"> 
            
-        <input class="form-control mr-sm-2" type="text" name="nombreA" placeholder="nombre del autor" autocomplete="off" required/><br>
-        <input class="form-control mr-sm-2" type="text" name="apellidoA" placeholder="apellido completo" autocomplete="off" required/><br>
-        <input class="form-control mr-sm-2" type="text" name="nacionalidadA" placeholder="nacionalidad" autocomplete="off" required/><br>          
+        <input class="form-control mr-sm-2" type="text" name="nombreA" id="nombreA" placeholder="nombre del autor" autocomplete="off" ><br>
+        <input class="form-control mr-sm-2" type="text" name="apellidoA" id="apellidoA" placeholder="apellido completo" autocomplete="off" ><br>
+        <input class="form-control mr-sm-2" type="text" name="nacionalidadA" id="nacionalidadA" placeholder="nacionalidad" autocomplete="off" ><br>          
                     
                <button type="submit" value="INGRESAR" class="btn btn-primary form-control">INGRESAR</button>
            
@@ -338,13 +272,14 @@ if(isset($_POST['nombreP']) && isset($_POST['apellidoP']) && isset($_POST['telef
           
       </div>
        <div class="modal-body">
-           <form action="agregar1.php" method="post"> 
+           <form id="dueñoL" method="post"> 
            
-        <input class="form-control mr-sm-2" type="text" name="nombreP" placeholder="ingrese su nombre" autocomplete="off" required/><br>
-        <input class="form-control mr-sm-2" type="text" name="apellidoP" placeholder="ingrese su apellido" autocomplete="off" required/><br>
-        <input class="form-control mr-sm-2" type="text" name="telefonoP" placeholder="mumero telefonico" autocomplete="off" required/><br>       <input class="form-control mr-sm-2" type="text" name="paisP" placeholder="pais-ciudad " autocomplete="off" required/><br> 
-        <input class="form-control mr-sm-2" type="email" name="emailP" placeholder="dsdfsd@gmail.com" autocomplete="off" required/><br>
-        <input class="form-control mr-sm-2" type="text" name="dniP" placeholder="dni" autocomplete="off" required/><br>                         
+        <input class="form-control mr-sm-2" type="text" name="nombreP" id="nombreP" placeholder="ingrese su nombre" autocomplete="off" ><br>
+        <input class="form-control mr-sm-2" type="text" name="apellidoP" id="apellidoP" placeholder="ingrese su apellido" autocomplete="off"><br>
+        <input class="form-control mr-sm-2" type="text" name="telefonoP" id="telefonoP" placeholder="mumero telefonico" autocomplete="off" ><br>      
+        <input class="form-control mr-sm-2" type="text" name="paisP" id="paisP" placeholder="pais-ciudad " autocomplete="off" ><br> 
+        <input class="form-control mr-sm-2" type="email" name="emailP" id="emailP" placeholder="dsdfsd@gmail.com" autocomplete="off" ><br>
+        <input class="form-control mr-sm-2" type="text" name="dniP" id="dniP" placeholder="dni" autocomplete="off" ><br>                         
                     
                <button type="submit" value="INGRESAR" class="btn btn-primary form-control">INGRESAR</button>
            

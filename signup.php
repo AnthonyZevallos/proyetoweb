@@ -16,7 +16,7 @@
 
  </head>
 
- <body id="signupp">
+ <body id="signupp" class="row m-0 justify-content-center align-items-center vh-100 ">
 
      
 
@@ -24,64 +24,40 @@
  
  <?php
 
- require_once 'login.php';
-    $conexion = new mysqli($hn, $un, $pw, $db);
-    if ($conexion->connect_error) die ("Fatal error");
-   /*---------insertando a los usuarios nuevos ---------*/
-    if(isset($_POST['user']) && isset($_POST['pass']))
-    {
-        $user = $_POST['user'];
-        $pass = md5($_POST['pass']);
-
-        $query = "INSERT INTO usuario VALUES('$user', '$pass')";
-        $result = $conexion->query($query);
-        if (!$result) die ("Falló registro");
-
-        echo "Successful registration <br> <a class='btn btn-primary' href='index.php' role='button'>ENTRA CON TU USUARIO CREADO</a>";
-        
-    }
-    else
-    {   /*----------formulario para registrar al  nuevo user------------*/
+  /*----------formulario para registrar al  nuevo user------------*/
         echo <<< _END
         
         
-        <div class="conteiner">
+        <div id="csingup">
         
-        <div class="row">
-         <div class="col-md-4"></div>
-           <div class="col-md-4">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h1 class="text-center" style="color:white">Regístrate</h1> 
-            <br>
+        
+         
+         <div class="conteiner">
+           
+           
+           <h1 class="text-center" style="color:white">Regístrate</h1><br> 
+           
             
-        <form class="form-inline my-2 my-lg-0" action="signup.php" method="post"><pre>
-                   <input class="form-control mr-sm-2" type="email" name="user" placeholder="Ingrese Email" autocomplete="off" required/><br>
-                   <input class="form-control mr-sm-2" type="password" name="pass" placeholder="Ingrese Password" autocomplete="off" required/>
-                   <input type="hidden" name="reg" value="yes">     
-                        <button type="submit" value="TO REGISTER" class="btn btn-primary">TO REGISTER</button><br>
-                                         <a href='index.php'>ATRAS</a>     
+        <form class="form-inline my-2 my-lg-0" id="ignup" method="post"><pre>
+             <input class="form-control mr-sm-2" type="email" name="user" id="user" placeholder="Ingrese Email" autocomplete="off" ><br>
+             <input class="form-control mr-sm-2" type="password" name="pass" id="pass" placeholder="Ingrese Password" autocomplete="off" >
+                    
+                  <button type="submit" value="TO REGISTER" class="btn btn-primary">TO REGISTER</button><br>
+                                <a href='index.php'>ATRAS</a>     
         </form>
         
           </div>
-          
-         <div class="col-md-4"></div>  
+        </div>
         
-        </div>
-        </div>
         _END;
     
-    }
+  
 
  
 ?>
 
 
+<script src="nuevoUsuario.js"></script>
 </body>
 
  </html>
